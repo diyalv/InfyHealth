@@ -49,6 +49,8 @@ struct TestView: View {
         self.userUID = user.uid
     }
     
+    /*
+    
     func fetchAppointments(forUserID userID: String, completion: @escaping ([Appointment]?, Error?) -> Void) {
         let db = Firestore.firestore()
         
@@ -114,70 +116,11 @@ struct TestView: View {
                 }
             }
         }
-    }
-
-    /*func fetchAppointments(forUserID userID: String, completion: @escaping ([Appointment]?, Error?) -> Void) {
-        let db = Firestore.firestore()
-        
-        // Reference to the user's document
-        let userRef = db.collection("users").document(userID)
-        
-        // Reference to the appointments sub-collection under the user's document
-        let appointmentsRef = userRef.collection("appointments")
-        
-        // Fetch appointments from the appointments sub-collection
-        appointmentsRef.getDocuments { (querySnapshot, error) in
-            if let error = error {
-                completion(nil, error)
-                return
-            }
-            
-            var appointments: [Appointment] = []
-            
-            for document in querySnapshot!.documents {
-                let data = document.data()
-                let time = data["time"] as? String ?? ""
-                
-                let timestamp = data["date"] as? Timestamp ?? Timestamp(date: Date())
-                let date = timestamp.dateValue()
-
-                // Create a DateFormatter
-                let formatter = DateFormatter()
-                formatter.dateFormat = "dd/MM/yyyy"
-
-                // Format the date
-                let formattedDate = formatter.string(from: date)
-                print("Formatted date: \(formattedDate)")
-
-                
-                let doctorID = data["doctorId"] as? String ?? ""
-                
-                // Fetch doctor details using doctorID
-                fetchDoctorDetails(forDoctorID: doctorID) { (doctor, error) in
-                    if let error = error {
-                        completion(nil, error)
-                        return
-                    }
-                    guard let doctor = doctor else {
-                        completion(nil, nil)
-                        return
-                    }
-                    
-                    let name = doctor.name
-                    let department = doctor.specialization
-                    let appointment = Appointment(name: name, department: department, time: time, date: formattedDate)
-                    appointments.append(appointment)
-                    
-                    // Check if all appointments are fetched
-                    if appointments.count == querySnapshot!.documents.count {
-                        completion(appointments, nil)
-                    }
-                }
-            }
-        }
     }*/
 
-    /*
+
+
+    
     func fetchAppointments(forUserID userID: String, completion: @escaping ([Appointment]?, Error?) -> Void) {
         let db = Firestore.firestore()
         
@@ -236,7 +179,7 @@ struct TestView: View {
                 }
             }
         }
-    }*/
+    }
 
 
     func fetchDoctorDetails(forDoctorID doctorID: String, completion: @escaping (Doctor?, Error?) -> Void) {

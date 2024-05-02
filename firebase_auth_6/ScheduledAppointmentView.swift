@@ -88,6 +88,7 @@ struct ScheduledAppointmentView: View {
         self.userUID = user.uid
     }
     
+    /*
     func fetchAppointments(forUserID userID: String, completion: @escaping ([Appointment]?, Error?) -> Void) {
         let db = Firestore.firestore()
         
@@ -147,9 +148,9 @@ struct ScheduledAppointmentView: View {
                 }
             }
         }
-    }
+    }*/
 
-    /*
+    
     func fetchAppointments(forUserID userID: String, completion: @escaping ([Appointment]?, Error?) -> Void) {
         let db = Firestore.firestore()
         
@@ -208,7 +209,7 @@ struct ScheduledAppointmentView: View {
                 }
             }
         }
-    }*/
+    }
 
 
     func fetchDoctorDetails(forDoctorID doctorID: String, completion: @escaping (Doctor?, Error?) -> Void) {
