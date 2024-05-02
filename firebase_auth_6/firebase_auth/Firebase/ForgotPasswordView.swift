@@ -2,7 +2,7 @@
 //  ForgotPasswordView.swift
 //  firebase_auth
 //
-//  Created by Rupaj Sen on 02/05/24.
+//  Created by  Gunna Rahul on 02/05/24.
 //
 
 import SwiftUI
