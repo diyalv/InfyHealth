@@ -33,6 +33,7 @@
 		3F4B3F4B2BE024540034768D /* StaffList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B3F482BE024540034768D /* StaffList.swift */; };
 		3F4B3F512BE024620034768D /* DocDashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B3F4C2BE024620034768D /* DocDashView.swift */; };
 		3F4B3F532BE024620034768D /* PatientList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B3F4E2BE024620034768D /* PatientList.swift */; };
+		3F5723C32BE3606A00FCE093 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5723C22BE3606A00FCE093 /* ForgotPasswordView.swift */; };
 		3FB3F0B82BDA47EC004C0790 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB3F0B72BDA47EC004C0790 /* AccountView.swift */; };
 		3FB3F0BA2BDABD0A004C0790 /* EditAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB3F0B92BDABD0A004C0790 /* EditAccountView.swift */; };
 		3FB3F0BC2BDAC2E7004C0790 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB3F0BB2BDAC2E7004C0790 /* TabBarView.swift */; };
@@ -66,6 +67,7 @@
 		3F4B3F482BE024540034768D /* StaffList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaffList.swift; sourceTree = "<group>"; };
 		3F4B3F4C2BE024620034768D /* DocDashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocDashView.swift; sourceTree = "<group>"; };
 		3F4B3F4E2BE024620034768D /* PatientList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientList.swift; sourceTree = "<group>"; };
+		3F5723C22BE3606A00FCE093 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		3FB3F0B72BDA47EC004C0790 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		3FB3F0B92BDABD0A004C0790 /* EditAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountView.swift; sourceTree = "<group>"; };
 		3FB3F0BB2BDAC2E7004C0790 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				3F399D992BD97404008AD694 /* Model */,
 				3F399D942BD97398008AD694 /* Helper */,
 				3F399DA82BD974E4008AD694 /* LoginView.swift */,
+				3F5723C22BE3606A00FCE093 /* ForgotPasswordView.swift */,
 				3F399DAA2BD97502008AD694 /* RegistrationView.swift */,
 				3F399DAC2BD97530008AD694 /* ProfileView.swift */,
 			);
@@ -280,6 +283,7 @@
 				3F19AA202BDBC0C5009B4D6C /* DepartmentView.swift in Sources */,
 				3F399DAD2BD97530008AD694 /* ProfileView.swift in Sources */,
 				3F399DB32BD97577008AD694 /* AdminView.swift in Sources */,
+				3F5723C32BE3606A00FCE093 /* ForgotPasswordView.swift in Sources */,
 				3F399DA92BD974E4008AD694 /* LoginView.swift in Sources */,
 				3F399D9B2BD97411008AD694 /* AuthViewModel.swift in Sources */,
 				3F399D982BD973D6008AD694 /* SettingsRowView.swift in Sources */,

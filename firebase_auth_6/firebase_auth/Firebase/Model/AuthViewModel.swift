@@ -1,7 +1,3 @@
-//  AuthViewModel.swift
-//  firebase_auth
-//  Created by Rupaj Sen on 24/04/24.
-
 import Foundation
 import Firebase
 import FirebaseFirestore
@@ -43,29 +39,6 @@ class AuthViewModel: ObservableObject {
         }
     }
     
-    /*
-     func signIn(withEmail email: String, password: String, userType: UserType) async throws {
-     do {
-     let result = try await Auth.auth().signIn(withEmail: email, password: password)
-     self.userSession = result.user
-     await fetchUser()
-     
-     // Check if the fetched user's userType matches the desired userType
-     if let currentUser = self.currentUser, currentUser.userType == userType {
-     // If both email, password, and userType match, login is successful
-     print("Login successful")
-     } else {
-     // If userType doesn't match, sign out the user and throw an error
-     try await Auth.auth().signOut()
-     self.userSession = nil
-     throw NSError(domain: "AuthViewModel", code: 0, userInfo: [NSLocalizedDescriptionKey: "User is not of the desired type."])
-     }
-     } catch {
-     print("Failed to log in with error \(error.localizedDescription)")
-     throw error
-     }
-     }*/
-    
     func signIn(withEmail email: String, password: String) async throws {
         do {
             let result = try await Auth.auth().signIn(withEmail: email, password: password)
@@ -76,7 +49,6 @@ class AuthViewModel: ObservableObject {
             throw error
         }
     }
-    
     
         func createUser(withEmail email: String, password: String, fullname: String, userType: UserType) async throws -> User {
             do {
@@ -108,6 +80,16 @@ class AuthViewModel: ObservableObject {
         }
     }
 
+    func resetPassword(email: String) async throws {
+        try await Auth.auth().sendPasswordReset(withEmail: email)
+    }
+    
+    func checkIfEmailExists(email: String) async throws -> Bool {
+        let querySnapshot = try await Firestore.firestore().collection("users").whereField("email", isEqualTo: email).getDocuments()
+        return !querySnapshot.documents.isEmpty
+    }
+
+
     
     func signOut() {
         do {
@@ -127,4 +109,3 @@ class AuthViewModel: ObservableObject {
         self.currentUser = try? snapshot.data(as: User.self)
     }
 }
-

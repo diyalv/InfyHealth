@@ -3,6 +3,10 @@ import Firebase
 import FirebaseFirestore
 struct AddStaff: View {
     @EnvironmentObject var viewModel: AuthViewModel
+    @State private var isSavingComplete = false
+        @State private var showAlert = false
+        @State private var alertMessage = ""
+        @Environment(\.presentationMode) var presentationMode
     
     @State private var fullName = ""
     @State private var email = ""
@@ -68,16 +72,33 @@ struct AddStaff: View {
             }
             .navigationBarTitle("Add Staff", displayMode: .inline)
             .toolbar {
-                ToolbarItem(placement: .bottomBar) {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button("Cancel") {
+                        presentationMode.wrappedValue.dismiss()
+                    }
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
                         signUpAndSaveData()
                     }) {
                         Text("Save")
+                            .fontWeight(.semibold)
                     }
                 }
             }
+            .alert(isPresented: $showAlert) {
+                Alert(title: Text("Error"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+            }
         }
         .navigationViewStyle(StackNavigationViewStyle()) // Full screen mode
+        .background(
+                    NavigationLink(
+                        destination: EmptyView(),
+                        isActive: $isSavingComplete,
+                        label: { EmptyView() }
+                    )
+                    .hidden()
+                )
     }
     
     func calculateHours(start: String, end: String) -> String {
@@ -88,6 +109,7 @@ struct AddStaff: View {
         return "\(totalHours) hrs"
     }
     
+
     func signUpAndSaveData() {
         if password == confirmPassword {
             Task {
@@ -110,8 +132,12 @@ struct AddStaff: View {
                     try await Firestore.firestore().collection("doctors").document(user.id).setData(doctorData)
                     
                     // Data saving logic could be moved here if needed after successful data saving
+                    DispatchQueue.main.async {
+                        isSavingComplete = true
+                    }
                 } catch {
-                    print("Error signing up and saving data: \(error.localizedDescription)")
+                    alertMessage = "Error signing up and saving data: \(error.localizedDescription)"
+                    showAlert = true
                 }
             }
         } else {

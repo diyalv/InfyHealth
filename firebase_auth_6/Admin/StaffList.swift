@@ -173,9 +173,9 @@ struct StaffList: View {
                 isAddStaffSheetPresented.toggle()
             }) {
                 Text("Add New Staff")
-                    .foregroundColor(.white)
                     .padding()
-                    .background(Color.blue)
+                    .background(Color.blue.opacity(0.2))
+                    .foregroundColor(.blue)
                     .cornerRadius(10)
             }
         }
