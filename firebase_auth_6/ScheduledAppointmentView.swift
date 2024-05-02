@@ -41,9 +41,10 @@ struct AppointmentCard: View {
             Text("Date : \(appointment.date)")
                 .font(.subheadline)
         }
-        .frame(width: 280)
+        .frame(width: 300)
         .padding()
         .background(RoundedRectangle(cornerRadius: 10).fill(Color.blue).opacity(0.2))
+        .padding(.horizontal)
     }
 }
 
