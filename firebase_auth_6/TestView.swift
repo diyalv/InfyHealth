@@ -26,7 +26,7 @@ struct TestView: View {
                         AppointmentCard(appointment: appointment)
                     }
                 }
-            }
+            }.frame(width:350)
         }
         .onAppear{
             getUserUID()
@@ -37,6 +37,7 @@ struct TestView: View {
             }
         }
         .padding()
+        .frame(width:300)
     }
     
     func getUserUID(){
