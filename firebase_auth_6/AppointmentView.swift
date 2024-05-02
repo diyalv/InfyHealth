@@ -12,6 +12,9 @@ struct AppointmentView: View {
     @State private var additionalInfo: String = ""
     let selectedDoctorId: String // New state to store the selected doctor's ID
     @EnvironmentObject var viewModel : AuthViewModel
+    @Environment(\.presentationMode) var presentationMode
+    @State private var showAlert: Bool = false
+    
     var body: some View {
         NavigationView {
             ScrollView {
@@ -83,11 +86,10 @@ struct AppointmentView: View {
                         saveAppointment()
                     }) {
                         Text("Save")
-                            .font(.headline)
-                            .foregroundColor(.white)
-                            .padding()
                             .frame(maxWidth: .infinity)
-                            .background(Color.blue)
+                            .padding()
+                            .background(Color.blue.opacity(0.2))
+                            .foregroundColor(.blue)
                             .cornerRadius(10)
                     }
                     .padding()
@@ -183,6 +185,7 @@ struct AppointmentView: View {
                 print("Patient ID:", user.uid)
             }
         }
+        presentationMode.wrappedValue.dismiss()
     }
 
 
