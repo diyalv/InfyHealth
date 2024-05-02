@@ -106,13 +106,8 @@ struct PatientView: View {
                                     .font(.title2)
                                     .padding(.vertical)
                                     .frame(maxWidth: .infinity,alignment: .leading)
-                                
-//                                NavigationLink(destination: ViewDoc()) {
-//                                    Text("View All")
-//                                }
-                                
-                                
                             }
+                            
                             VStack(alignment: .leading) {
                                 ScrollView(.horizontal, showsIndicators: false) {
                                     HStack {
@@ -141,6 +136,16 @@ struct PatientView: View {
                                     }
                                 }
                             }
+                            
+                            HStack{
+                                Text("Medication")
+                                    .font(.title2)
+                                    .padding(.vertical)
+                                    .frame(maxWidth: .infinity,alignment: .leading)
+                            }
+                            
+                            
+                            
                         }
                         .padding()
                         .offset(y:-59)

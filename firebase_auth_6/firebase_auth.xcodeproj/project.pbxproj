@@ -97,18 +97,15 @@
 		3F399D772BD971A7008AD694 = {
 			isa = PBXGroup;
 			children = (
+				3FA390A52BE369A7006AF98B /* Patient */,
 				3F4B3F502BE024620034768D /* Dcotor */,
 				3F4B3F492BE024540034768D /* Admin */,
-				3F19AA212BDBC901009B4D6C /* ScheduledAppointmentView.swift */,
 				3FB3F0BB2BDAC2E7004C0790 /* TabBarView.swift */,
-				3F4B3F452BE0134E0034768D /* TestView.swift */,
 				3FB3F0B92BDABD0A004C0790 /* EditAccountView.swift */,
 				3FB3F0B72BDA47EC004C0790 /* AccountView.swift */,
 				3F399DB22BD97577008AD694 /* AdminView.swift */,
 				3F399DB02BD9756D008AD694 /* DoctorView.swift */,
 				3F19AA1F2BDBC0C5009B4D6C /* DepartmentView.swift */,
-				840346922BDA1D7E000D6055 /* ViewDoc.swift */,
-				3F399DAE2BD9755F008AD694 /* PatientView.swift */,
 				840346942BDA1D9E000D6055 /* AppointmentView.swift */,
 				3F399D852BD971A7008AD694 /* ContentView.swift */,
 				840346902BDA1D32000D6055 /* DoctorDetailView.swift */,
@@ -193,6 +190,17 @@
 				8453FF652BE25B2D008CDEE7 /* PatientHistoryUpdate.swift */,
 			);
 			path = Dcotor;
+			sourceTree = "<group>";
+		};
+		3FA390A52BE369A7006AF98B /* Patient */ = {
+			isa = PBXGroup;
+			children = (
+				3F399DAE2BD9755F008AD694 /* PatientView.swift */,
+				840346922BDA1D7E000D6055 /* ViewDoc.swift */,
+				3F4B3F452BE0134E0034768D /* TestView.swift */,
+				3F19AA212BDBC901009B4D6C /* ScheduledAppointmentView.swift */,
+			);
+			path = Patient;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
